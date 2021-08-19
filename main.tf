@@ -59,7 +59,7 @@ resource "aws_eks_cluster" "cluster" {
     subnet_ids = data.aws_subnet_ids.default.ids
   }
 
-  # Make sure that IAM Role permissions are created before and deleted after EKS Cluster handling.
+  # Make sure that IAM Role permissions are created before EKS Cluster handling.
   depends_on = [
     aws_iam_role_policy_attachment.cluster_eks_cluster_policy,
     aws_iam_role_policy_attachment.cluster_eks_vpc_resource_controller,
